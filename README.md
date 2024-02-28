@@ -515,11 +515,8 @@
 ## <a name="_toc131123608"></a>Приложение 1
 ### <a name="_toc131123609"></a>Алгоритм Карла Фридриха Гинденбурга
 
-''' java
-
-
-
 import java.util.Arrays;
+
 public class TheCarlFriedrichHindenburgAlgorithm {
     public static void main(String[] args) {
 
@@ -556,10 +553,6 @@ public class TheCarlFriedrichHindenburgAlgorithm {
         }
     }
 }
-
-
-
-'''
 
 
 
