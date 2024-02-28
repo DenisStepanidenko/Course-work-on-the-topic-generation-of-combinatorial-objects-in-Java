@@ -514,7 +514,10 @@
 # <a name="_toc43133212"></a><a name="_toc130205999"></a><a name="_toc131123607"></a>Приложения
 ## <a name="_toc131123608"></a>Приложение 1
 ### <a name="_toc131123609"></a>Алгоритм Карла Фридриха Гинденбурга
-'''java
+
+'''java   
+
+ 
 import java.util.Arrays;
 
 public class TheCarlFriedrichHindenburgAlgorithm {
@@ -553,6 +556,8 @@ public class TheCarlFriedrichHindenburgAlgorithm {
         }
     }
 }
+
+
 '''
 
 
