@@ -514,7 +514,7 @@
 # <a name="_toc43133212"></a><a name="_toc130205999"></a><a name="_toc131123607"></a>Приложения
 ## <a name="_toc131123608"></a>Приложение 1
 ### <a name="_toc131123609"></a>Алгоритм Карла Фридриха Гинденбурга     
-
+```java
 import java.util.Arrays;
 
 public class TheCarlFriedrichHindenburgAlgorithm {
@@ -553,115 +553,77 @@ public class TheCarlFriedrichHindenburgAlgorithm {
         }
     }
 }
+```
 
 
 
+## <a name="_toc131123610"></a>Приложение 2
+### <a name="_toc131123611"></a>Алгоритм Хипа
+```java
+import java.util.Arrays;
 
-## <a name="_toc131123610"></a>**Приложение 2**
-### <a name="_toc131123611"></a>**Алгоритм Хипа**
-**public** **static** **void** **HipAlgorithm**(**int**[] nums, **int** k) {
+public class HipAlgorithm {
+    public static void main(String[] args) {
 
-`        `**if** (k == **1**) {
+    }
+    public static void HipAlgorithm(int[] nums, int k) {
+        if (k == 1) {
+            System.out.println(Arrays.toString(nums));
+        } else {
+            for (int i = 0; i < k; i++) {
+                HipAlgorithm(nums, k - 1);
+                if (k % 2 == 0) {
+                    swap(nums, i, k - 1);
+                } else {
+                    swap(nums, 0, k - 1);
+                }
+            }
+        }
 
-`            `System.out.println(Arrays.toString(nums));
+    }
 
-`        `} **else** {
+    public static void swap(int[] arr, int i, int i1) {
+        int tmp = arr[i];
+        arr[i] = arr[i1];
+        arr[i1] = tmp;
+    }
+}
 
-`            `**for** (**int** i = **0**; i < k; i++) {
+```
 
-`                `HipAlgorithm(nums, k - **1**);
 
-`                `**if** (k % **2** == **0**) {
 
-`                    `swap(nums, i, k - **1**);
+## <a name="_toc131123612"></a>Приложение 3
+### <a name="_toc131123613"></a>Алгоритм генерации разбиения числа с помощью динамического программирования
+```java
+import java.util.Arrays;
 
-`                `} **else** {
+public class HipAlgorithm {
+    public static void main(String[] args) {
 
-`                    `swap(nums, **0**, k - **1**);
+    }
+    public static void HipAlgorithm(int[] nums, int k) {
+        if (k == 1) {
+            System.out.println(Arrays.toString(nums));
+        } else {
+            for (int i = 0; i < k; i++) {
+                HipAlgorithm(nums, k - 1);
+                if (k % 2 == 0) {
+                    swap(nums, i, k - 1);
+                } else {
+                    swap(nums, 0, k - 1);
+                }
+            }
+        }
 
-`                `}
+    }
 
-`            `}
+    public static void swap(int[] arr, int i, int i1) {
+        int tmp = arr[i];
+        arr[i] = arr[i1];
+        arr[i1] = tmp;
+    }
+}
 
-`        `}
+```
 
-`    `}
-
-**public** **static** **void** **swap**(**int**[] arr, **int** i, **int** i1) {
-
-`        `**int** tmp = arr[i];
-
-`        `arr[i] = arr[i1];
-
-`        `arr[i1] = tmp;
-
-`    `}
-
-## <a name="_toc131123612"></a>**Приложение 3**
-### <a name="_toc131123613"></a>**Алгоритм генерации разбиения числа с помощью динамического программирования**
-**import** **java.util.Arrays**;
-
-**public** **class** **Solution** {
-
-`    `**public** **static** **int**[] **getNextPartition**(**int**[] partition) { // вернёт ссылку на целочисенный массив, следующее разбиение
-
-`        `**if** (partition.length == **1**) { // разбиений больше нет
-
-`            `**return** **null**;
-
-`        `}
-
-`        `**int** minIndex = **0**;
-
-`        `**for** (**int** i = **0**; i < partition.length - **1**; i++) { // ищем самый минимальный элемент от начала до предпоследнего
-
-`            `**if** (partition[i] < partition[minIndex]) {
-
-`                `minIndex = i;
-
-`            `}
-
-`        `}
-
-`        `partition[minIndex] += **1**; // увеличиваем минимальный элемент 1
-
-`        `partition[partition.length - **1**] -= **1**; // уменьшаем последний элемент на 1
-
-`        `minIndex += **1**;
-
-`        `**int** partSum = **0**;
-
-`        `**for** (**int** i = minIndex; i < partition.length; i++) {
-
-`            `partSum += partition[i];
-
-`        `}
-
-`        `**int**[] nextPartition = Arrays.copyOf(partition, minIndex + partSum);
-
-`        `**for** (**int** i = minIndex; i < nextPartition.length; i++) {
-
-`            `nextPartition[i] = **1**;
-
-`        `}
-
-`        `**return** nextPartition;
-
-`    `}
-
-`    `**public** **static** **void** **printAllNumberPartitions**(**int** number) {
-
-`        `**int**[] partition = **new** **int**[number];
-
-`        `Arrays.fill(partition, **1**);
-
-`        `**for** (; partition != **null**;) {
-
-`            `System.out.println(Arrays.toString(partition));
-
-`            `partition = getNextPartition(partition);
-
-`        `}
-
-`    `}
-35
